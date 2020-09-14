@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <th:block th:replace="fragment/config :: configFragment" ></th:block>
+</head>
+<body>
+    <!-- header fragment 사용 -->
+    <th:block th:replace="fragment/header :: headerFragment"></th:block>
+    <section>
+        <div class="sectionTotal">
+            <div id="sectionDiv">
+                <article id="mainRank"><a href="/uni">대학순위 </a></article>
+                <article id="mainRank"><a href="/game">게임순위 </a></article>
+                <article id="mainRank"><a href="/movie">영화순위 </a></article>
+            </div>
+            <div id="sectionDiv">
+                <article id="mainRank"><a href="/company">기업순위 </a></article>
+                <article id="mainRank"><a href="#">Coming Soon </a></article>
+                <article id="mainRank"><a href="#">Coming Soon </a></article>
+            </div>
+        </div>
+    </section>
+    <!-- footer fragment 사용 -->
+    <th:block th:replace="fragment/footer :: footerFragment"></th:block>
+</body>
+</html>

@@ -1,12 +1,18 @@
 server:
   port: 8080
-# spring:
+spring:
 #   mvc:
 #     view:
 #       prefix: /WEB-INF/views/
 #       suffix: .jsp
-#   datasource:
-#     driver-class-name: com.mysql.jdbc.Driver
-#     url: jdbc:mysql://localhost:3306/herbmall?serverTimezone=Asia/Seoul&useSSL=false
-#     username: herb
-#     password: 1234
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/herbmall?serverTimezone=Asia/Seoul&useSSL=false
+    username: herb
+    password: 1234
+
+mybatis:
+  type-aliases-package: com.duo.ranking.*.domain
+  mapper-locations: mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

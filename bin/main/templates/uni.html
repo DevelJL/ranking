@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealRanking - 대학순위</title>
+    <th:block th:replace="fragment/config :: configFragment" ></th:block>
+</head>
+<body>
+    <th:block th:replace="fragment/header :: headerFragment"></th:block>
+    <section>
+        <table border="1">
+            <tr>
+                <th>국제 순위</th>
+                <th>국내 순위</th>
+                <th>대학</th>
+            </tr>
+            <tr th:each="vo : ${list}">
+                <td th:text="${vo.foreign}"></td>
+                <td th:text="${vo.domestic}"></td>
+                <td th:text="${vo.uniName}"></td>
+            </tr>
+            
+        </table>
+
+    </section>
+    <th:block th:replace="fragment/footer :: footerFragment"></th:block>
+</body>
+</html>
