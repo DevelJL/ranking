@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.duo.ranking.paging.mapper.PagingMapper">
+
+	<select id="selectPaging" resultType="PagingVO" parameterType="com.duo.ranking.common.Pagination">
+		select P.* from
+		(
+			select * from paging order by no
+		)P
+		limit #{startPage}, #{recordCountPerPage}
+	</select>
+	<select id="totalPaging" resultType="int">
+		select count(*) from paging
+	</select>
+	
+</mapper>

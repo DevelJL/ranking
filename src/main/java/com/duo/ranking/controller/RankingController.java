@@ -10,4 +10,5 @@ public class RankingController {
     public String home(){
         return "index";
     }
+
 }

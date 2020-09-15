@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <th:block th:replace="fragment/config :: configFragment" ></th:block>
+</head>
+<body>
+    <th:block th:replace="fragment/header :: headerFragment"></th:block>
+    <section>
+        <div id="sectionDiv">
+            <table>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>본문</th>
+                </tr>
+                <tr th:if="${list} != null" th:each="vo : ${list}">
+                    <td th:text="${vo.no}"></td>
+                    <td th:text="${vo.title}"></td>
+                    <td th:text="${vo.content}"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="sectionDiv">
+            <th:block th:each="num: ${#numbers.sequence(page.firstPage, page.lastPage)}">
+                <span><a th:href="@{/paging(currentPage=${num})}" th:text="${num}"></a></span>
+            </th:block>
+            
+        </div>
+    </section>
+
+    <th:block th:replace="fragment/footer :: footerFragment"></th:block>
+</body>
+</html>
